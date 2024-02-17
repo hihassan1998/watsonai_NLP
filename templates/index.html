@@ -1,10 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="./static/mywebscript.js"></script>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #3498db, #2c3e50); /* Gradient background */
+        }
         .center-heading {
             text-align: center;
+            color: #blue; /* Text color */
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            overflow: hidden;
+            width: 400px;
+            margin: auto; /* Center the card */
+            margin-top: 50px; /* Adjust top margin */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .card-body {
+            padding: 25px;
+        }
+        .form-label {
+            color: #333; /* Label text color */
+        }
+        #system_response {
+            margin-top: 20px;
+            background-color: #fff; /* Response box background color */
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            word-wrap: break-word;
         }
     </style>
 </head>
@@ -12,21 +43,21 @@
     <div class="card">
         <div class="card-body">
             <h1 class="center-heading">NLP - Emotion Detection</h1> 
-            <div style="padding: 25px 25px 25px 25px;">
-            <h2 class="mb-3">
-                <label class="form-label">Please enter the text to be analyzed</label>
-                <input type="textarea" class="form-control" id="textToAnalyze">
-            </h2>
-
-            <div style="padding: 25px 25px 25px 25px;">
-                <button onclick="RunSentimentAnalysis()" class="btn btn-secondary">Run Sentiment Analysis</button>
+            <div style="padding: 25px 0;">
+                <h2 class="mb-3">
+                    <label class="form-label">Please enter the text to be analyzed</label>
+                    <input type="textarea" class="form-control" id="textToAnalyze">
+                </h2>
+                <div style="padding: 25px 0;">
+                    <button onclick="RunSentimentAnalysis()" class="btn btn-secondary">Run Sentiment Analysis</button>
+                </div>
+                <div style="padding: 25px 0;"></div>
+                <h2 class="mb-3">
+                    <label class="form-label">Result of Emotion Detection</label>
+                </h2>
+                <div id="system_response"></div>
             </div>
-            <div style="padding: 25px 25px 25px 25px;"></div>
-            <h2 class="mb-3">
-                <label class="form-label">Result of Emotion Detection</label>
-            </h2>
-
-            <div id="system_response" style="padding: 25px 25px 25px 25px;"></div>
         </div>
     </div>
 </body>
+</html>
